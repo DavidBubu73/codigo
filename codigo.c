@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 unsigned char * LocalizaVectorUnsignedChar(int n);
 
@@ -12,6 +11,7 @@ int  EscribeHistograma(int *, char[]);
 
 int main()
 {
+    //Declaración de variables.
     int n1, n2;
     char name[51], nombre1[51], nombre2[51];
     unsigned char *list1, *list2;
@@ -76,6 +76,7 @@ int main()
 
     histo2 = Histogramar(list2, n2);
 
+
     if(histo2 == NULL)
         return 0;
 
@@ -99,7 +100,7 @@ int main()
         return 0;
     }
 
-    printf("¡Tus datos fueron guardados con exito! :D\n");
+    printf("Tus datos fueron guardados con exito.\n");
 
     return 0;
 }
@@ -149,7 +150,7 @@ int  EscribeHistograma(int *histo, char nombre[51])
 
     for(int i = 0; i < 256; i++)
     {
-        fprintf(out, "%d\t%d\n", i, histo);
+        fprintf(out, "%d\t%d\n", i, histo[i]);
     }
 
     fclose(out);
